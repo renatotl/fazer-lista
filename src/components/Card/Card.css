@@ -1,0 +1,42 @@
+ .card {
+    height: 100%;
+    width: 100%;
+
+    background: #3b02d7;
+    color: rgb(7, 6, 6);
+  
+    border-radius: 5px;
+    margin-bottom: 20px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .card strong {
+    font-size: 20px;
+  }
+
+
+  .card2 {
+    height: 100%;
+    margin-left:1rem;
+  
+    background: #3b02d7;
+    color: rgb(7, 6, 6);
+  
+    border-radius: 5px;
+    margin-bottom: 20px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .mainCard{
+    display:flex;
+   justify-content: space-evenly;
+   width: 50%;
+  }
