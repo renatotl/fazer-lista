@@ -4,10 +4,14 @@
     flex-direction:column;
 }
 
+.container h1{ 
+    margin: 84px 0 30px;
+    }
+
 
     .container input {
         width: 50%;
-        padding: 7px;
+        padding: 100px;
         background: #e6e6e6;
         border-radius: 3px;
         border: none;
@@ -32,6 +36,6 @@
         filter: brightness(0.9);
       }
 
-      .ID{
-        margin:0rem 0rem 1rem 0rem;
+      .IDD{
+        padding:1rem;
       }

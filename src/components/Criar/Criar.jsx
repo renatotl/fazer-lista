@@ -2,6 +2,9 @@ import "./Criar.css"
 import {useState} from "react"
 import {agendas} from "../Mocks/agendas.js"
 import {Card} from "../Card/Card.jsx"
+// import {App} from "../../App.js"
+
+
 
 export function Criar(){
 
@@ -13,14 +16,15 @@ export function Criar(){
   
   function twoHandle(){ 
     handleAddAgenda()
-    // handleId()
+    
   }
 
   function handleAddAgenda() {
     const novaAgenda = {
       id: novoId,
       text: agendaTask   
-    }
+    } 
+    // [...prevState, novaAgenda] o primeiro é o valor atual e o segundo é o que vai substituir
     setAgenda((prevState) => [...prevState, novaAgenda]);
 
   }
@@ -28,25 +32,20 @@ export function Criar(){
   const [novoId, setIdTask] = useState("");
 
 
-  // function handleId(){
-  //   const novoId = {
-  //     id: IdTask
-  //   }
-  //   setAgenda((prevState) => [...prevState, novoId]);
-
-  // }
+  
 
     return (
         <div className="container">
-          <input classNmae="ID" type="text" placeholder="Digite um ID:" onChange={(event) => setIdTask(event.target.value)}></input>
-           <hi className="h1">Agenda</hi>
+          <input className="ID" type="text" placeholder="Digite um ID:" onChange={(event) => setIdTask(event.target.value)}></input>
            <input type="text" placeholder="Qual a tarefa do dia?" onChange={(event) => setAgendaTask(event.target.value)}></input>
            <button type="button" onClick={twoHandle}>Adicionar</button>
            {agenda.map((props) => (
-           <Card text={props.text} id={props.id} />
+           <Card className="myAgenda" key={`myAgenda ${props.id}`} text={props.text} id={props.id} />
            ))}
         </div>
     
     )
   
 }
+
+// a mynga chave desse elemento é o props.id da lista. Ele atribui a cada elemento renderisado na tela um id uma identificação. Com isso o react vai saber quem eu estou manipulando
