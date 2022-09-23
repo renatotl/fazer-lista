@@ -6,11 +6,15 @@ import {NavBar} from "./components/NavBar/NavBar.jsx"
 
 export function App() {
 
+
+    
+
+
     return (
         <> 
         <NavBar/>
         <Header/>
-        {/* {agenda.map((props) => (
+        {/* {setAgendaCompleta.map((props) => (
            <Card className="myAgenda" key={`myAgenda ${props.id}`} text={props.text} id={props.id} />
            ))} */}
         </>
