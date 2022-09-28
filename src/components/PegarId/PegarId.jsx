@@ -1,8 +1,9 @@
 import "./PegarId"
 import React, {useState} from "react"
-import {agendas} from "../Mocks/agendas.js"
+// import {agendas} from "../Mocks/agendas.js"
 import {CardId} from "../CardId/CardId.jsx"
-// import {AgendaService} from "../../Services/AgendaService.js"
+// import {Api} from "../../Helpers/Api.js"
+
 //  import {Api} from "../../Helpers/Api.js"
 
 
@@ -25,17 +26,17 @@ export function PegarId(){
 
 //    }
 
+//const response =  Api.agendaById((i) => i.id == id);
 
 
-
-   const findByIdAgenda =  () => {
+   const findByIdAgenda = async () => {
     const input = document.querySelector('#inputId');//foi esse cara id="inputId"
     console.log(input)
     const id = input.value;
     console.log(id)
-    const response =  agendas.find((i) => i.id == id);
-    console.log(response)
-    setIdi(response);
+    //const response = await .agendaById(id);
+    //console.log(response)
+    //setIdi(response);
 //    <CardId  />
 }
 
