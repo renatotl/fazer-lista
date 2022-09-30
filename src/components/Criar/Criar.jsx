@@ -43,13 +43,14 @@ export function Criar(){
       text: agendaTask   
     } 
     // [...prevState, novaAgenda] o primeiro é o valor atual e o segundo é o que vai substituir
-    setAgenda((prevState) => [...prevState, novaAgenda]);
+    
+    setAgenda(novaAgenda);
 
   }
 
   useEffect(() => {
     getAgendas();
-  });
+  },[]);
 
   async function getAgendas() {
     const agendas = await Api.getAllAgendas();
@@ -87,8 +88,8 @@ export function Criar(){
           <input className="ID" type="text" placeholder="Digite um ID:" onChange={(event) => setIdTask(event.target.value)}></input>
            <input type="text" placeholder="Qual a tarefa do dia?" onChange={(event) => setAgendaTask(event.target.value)}></input>
            <button type="button" onClick={twoHandle}>Adicionar</button>
-           {agendaLista.map((props) => (
-           <Card className="myAgenda" key={`myAgenda ${props.id}`} text={props.text} id={props.id} />
+           {agendaLista.map((props,index) => (
+           <Card className="myAgenda" key={`myAgenda ${index}`} text={props.text} id={props.id} />
            ))}
         </div>
     

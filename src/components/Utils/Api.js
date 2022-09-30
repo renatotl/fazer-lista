@@ -13,6 +13,8 @@ export const Api = {
     return newAgenda;
   },
 
+
+  //OUTRA FORMA DE FAZER
 //   getAllAgendas: async () => {
 //     const response = await fetch(`${defaultUrl}/all-agendas`);
 //     const allAgendas = await response.json();
@@ -23,9 +25,10 @@ export const Api = {
 
   getAllAgendas: async () => {
     return await fetch(`${defaultUrl}/all-agendas`).then(data => data.json())
-   
-   
   },
+
+// find  retorna todos os iguais 
+// findone retorna somente 1
 
   getAgendaById: async (id) => {
     const response = await fetch(`${defaultUrl}/one-agenda/${id}`);

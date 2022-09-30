@@ -2,16 +2,15 @@ import "./PegarId"
 import React, {useState} from "react"
 // import {agendas} from "../Mocks/agendas.js"
 import {CardId} from "../CardId/CardId.jsx"
-// import {Api} from "../../Helpers/Api.js"
+import {Api} from "../Utils/Api.js"
 
-//  import {Api} from "../../Helpers/Api.js"
 
 
 export function PegarId(){
 
  
 
-    const [idi, setIdi] = useState({});
+    const [idi, setIdi] = useState([]);
 
 
     function twoHandle(){ 
@@ -34,10 +33,10 @@ export function PegarId(){
     console.log(input)
     const id = input.value;
     console.log(id)
-    //const response = await .agendaById(id);
-    //console.log(response)
-    //setIdi(response);
-//    <CardId  />
+    const response = await Api.getAgendaById(id);
+    console.log(response)
+    setIdi(response);
+
 }
 
 
