@@ -4,7 +4,6 @@ import React, {useState, useEffect} from "react"
 import {Card} from "../Card/Card.jsx"
 import {Api} from "../Utils/Api.js"
 // import {App} from "../../App.js"
-//O useEffect controla o ciclo de vida dos components 
 
 
 
@@ -47,7 +46,7 @@ export function Criar(){
     setAgenda(novaAgenda);
 
   }
-
+//O useEffect controla o ciclo de vida dos components 
   useEffect(() => {
     getAgendas();
   },[]);
@@ -66,14 +65,6 @@ export function Criar(){
 
 
   /*
-////// códigos da Api em baixo
-
-//função async da Api
-  const getLista = async () => {
-    //a unção getLista está no meu arquivo Api
-    const response = await AgendaService.getLista();
-    setAgendas(response);
-  };
   // quando o componente for renderizado na tela o useEffect vai renderizar nosso getLista
 // primeiro parametro é a função e o segundo um array vazio para não virar um loop
  
@@ -97,5 +88,6 @@ export function Criar(){
     )
   
 }
+//nossa key foi colocada de forma correta
 
 // a mynga chave desse elemento é o props.id da lista. Ele atribui a cada elemento renderisado na tela um id uma identificação. Com isso o react vai saber quem eu estou manipulando
