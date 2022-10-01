@@ -88,6 +88,6 @@ export function Criar(){
     )
   
 }
-//nossa key foi colocada de forma correta
+//nossa key foi colocada de forma correta é colocada onde os itens da api for varrido 
 
 // a mynga chave desse elemento é o props.id da lista. Ele atribui a cada elemento renderisado na tela um id uma identificação. Com isso o react vai saber quem eu estou manipulando
