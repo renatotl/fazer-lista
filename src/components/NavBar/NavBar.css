@@ -20,9 +20,34 @@ nav{
     cursor: pointer;
     transition: filter 0.2s;
     font-size: 16px;
+
+    
   }
 
   .nav button:hover {
     filter: brightness(0.9);
   }
 
+  .Agenda--ativa {
+    background: rgba(148, 0, 211);
+    transform: translateY(-3px);
+    border-radius: 10px;
+    transition: all .5s;
+    padding: 5
+  }
+
+  .B {
+    width: 100%;
+    padding: 14px;
+    font-weight: 700;
+    background: #16f74b;
+    color: #fff;
+    border-radius: 3px;
+    margin: 10px 0 0px;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s;
+    font-size: 16px;
+
+    
+  }
