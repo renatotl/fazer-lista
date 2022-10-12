@@ -21,7 +21,9 @@ export function NavBar({ updateAgenda, mode }) {
     updateAgenda()
   }
 
-  useEffect(() => {}, []);
+  // useEffect(() => {
+  //   updateAgenda()
+  // }, []);
 
   // const [verLista, setVerLista] = useState(false);
   // function handleValue3(){
@@ -57,9 +59,8 @@ export function NavBar({ updateAgenda, mode }) {
               mode === ActionMode.ATUALIZAR && "Agenda--ativa"
             }`}
             type="button"
-            onClick={handleAtualizar }
             onChange={(e) => setAtualizar(e.target.value)}
-            
+            onClick={handleAtualizar}
             
           >
             Atualizar

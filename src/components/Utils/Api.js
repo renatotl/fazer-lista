@@ -37,7 +37,7 @@ export const Api = {
   },
 
   updateAgenda: async (id, agenda) => {
-    const response = await fetch(`${defaultUrl}/update/${id}`, {
+    const response = await fetch(`${defaultUrl}/update-agendas/${id}`, {
       method: "PUT",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify(agenda),
