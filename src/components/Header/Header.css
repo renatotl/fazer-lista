@@ -5,18 +5,19 @@
     
 }
 
-.badAction span{
+.badAction{
         background: rgba(148, 0, 211);
         transform: translateY(-3px);
-        width: 100%;
-        padding: 14px;
+        /* width: 100%; */
+        /* padding: 14px; */
         font-weight: 700;
         color: #fff;
         border-radius: 3px;
-        margin: 10px 0 0px;
+        /* margin: 10px 0 0px; */
         border: none;
-        cursor: pointer;
-        transition: filter 0.2s;
+        /* cursor: pointer; */
+        /* transition: filter 0.2s; */
         font-size: 16px;
-      
+        padding:1rem 0rem 1rem 0rem;
+        
 }
