@@ -15,6 +15,7 @@ const handleActions = (action) => {
   // o ActionMode vem por parâmetro e compara se for diferente ele muda o valor
   const novaAcao = modoAtual === action ? ActionMode.NORMAL : action;
   setModoAtual(novaAcao);// se ele receber atualizar ele altera o state 
+  
 };
 
 
