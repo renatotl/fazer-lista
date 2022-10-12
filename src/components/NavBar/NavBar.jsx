@@ -3,9 +3,13 @@ import { Header } from "../Header/Header.jsx";
 import { useState } from "react";
 import { ActionMode } from "constants/index";
 
-export function NavBar({modeAtualizar,mode}) {
+export function NavBar({modeAtualizar,mode,modeDeletar}) {
 
-
+  function handdleThree(){
+       modeDeletar()
+       handleDeletar()
+    console.log(mode)
+  }
 
 function handdleTwo(){
   modeAtualizar()
@@ -26,6 +30,12 @@ function handdleTwo(){
   const [atualizar, setAtualizar] = useState(false);
   function handleAtualizar() {
     setAtualizar(!atualizar);
+
+  }
+
+  const [deletar, setDeletar] = useState(false);
+  function handleDeletar() {
+    setDeletar(!deletar);
 
   }
 
@@ -74,6 +84,19 @@ function handdleTwo(){
             Atualizar
           </button>
         </ul>
+        <ul className="ul">
+          <button
+            className={`B ${
+              mode === ActionMode.DELETAR && "Agenda--ativa"
+            }`}
+            type="button"
+            onChange={(e) => setAtualizar(e.target.value)}
+            onClick={handdleThree}
+            
+          >
+            Deletar
+          </button>
+        </ul>
 
         {/* <ul className="ul" >
         <button  className="B" type="button" onChange={e => setVerId(e.target.value)} onClick={handleValue3} >Lista de Taferas</button>
@@ -83,6 +106,7 @@ function handdleTwo(){
         setCriar={criarIsOpen}
         setId={verId} //setLista={verLista}
         setAtualizando={atualizar}
+        setDeletando={deletar}
       />
     </>
   );

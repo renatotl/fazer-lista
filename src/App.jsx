@@ -24,6 +24,8 @@ const handleActions = (action) => {
         <NavBar 
          mode={modoAtual}
          modeAtualizar={() => handleActions(ActionMode.ATUALIZAR)}
+         modeDeletar={() => handleActions(ActionMode.DELETAR)}
+
          />
         <Header
         mode={modoAtual}

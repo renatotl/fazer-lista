@@ -14,7 +14,8 @@ export function AtualizarAgenda(){
 
 
     function twoHandle(){ 
-        updatingAgenda()
+       // updatingAgenda()
+       findByIdAgenda()
       
     }
 
@@ -59,7 +60,7 @@ const findByIdAgenda = async () => {
           <input className="IDD"  id="inputId" name="inputId" type="text" placeholder="Atualizar por Id:" onChange={(event) => setIdi(event.target.value)}></input>
            <button type="button" onClick={twoHandle}>Achar</button>
            {
-            <CardAtualizar text={idi.text} id={idi.id} />}
+            <CardAtualizar text={idi.text} id={idi.id}  />}
         </div>    
             
     )
