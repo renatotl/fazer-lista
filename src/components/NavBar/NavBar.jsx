@@ -87,7 +87,7 @@ function handdleTwo(){
         <ul className="ul">
           <button
             className={`B ${
-              mode === ActionMode.DELETAR && "Agenda--ativa"
+              mode === ActionMode.DELETAR && "Agenda--ativa-D"
             }`}
             type="button"
             onChange={(e) => setAtualizar(e.target.value)}
