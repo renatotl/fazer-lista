@@ -8,7 +8,7 @@ nav{
 }
 
 
-.nav button {
+.B {
     width: 100%;
     padding: 14px;
     font-weight: 700;
@@ -31,12 +31,19 @@ nav{
   .Agenda--ativa {
     background: rgba(148, 0, 211);
     transform: translateY(-3px);
-    border-radius: 10px;
-    transition: all .5s;
-    padding: 5
+    width: 100%;
+    padding: 14px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 3px;
+    margin: 10px 0 0px;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s;
+    font-size: 16px;
   }
 
-  .B {
+  /* .B button{
     width: 100%;
     padding: 14px;
     font-weight: 700;
@@ -50,4 +57,4 @@ nav{
     font-size: 16px;
 
     
-  }
+  } */

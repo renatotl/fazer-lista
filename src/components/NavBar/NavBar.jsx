@@ -1,9 +1,17 @@
 import "./NavBar.css";
 import { Header } from "../Header/Header.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ActionMode } from "constants/index";
 
-export function NavBar({ updateAgenda, mode }) {
+export function NavBar({modeAtualizar,mode}) {
+
+
+
+function handdleTwo(){
+  modeAtualizar()
+  handleAtualizar()
+  console.log(mode)
+}
 
   const [criarIsOpen, setCriarIsOpen] = useState(false);
   function handleCriar() {
@@ -18,7 +26,7 @@ export function NavBar({ updateAgenda, mode }) {
   const [atualizar, setAtualizar] = useState(false);
   function handleAtualizar() {
     setAtualizar(!atualizar);
-    updateAgenda()
+
   }
 
   // useEffect(() => {
@@ -60,7 +68,7 @@ export function NavBar({ updateAgenda, mode }) {
             }`}
             type="button"
             onChange={(e) => setAtualizar(e.target.value)}
-            onClick={handleAtualizar}
+            onClick={handdleTwo}
             
           >
             Atualizar
