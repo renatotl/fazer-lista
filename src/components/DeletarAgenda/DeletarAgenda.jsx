@@ -14,7 +14,7 @@ export function DeletarAgenda(){
 
 
     function twoHandle(){ 
-        findByIdAgenda()
+        findByIdAgendaAndDelete()
       
     }
 
@@ -28,12 +28,12 @@ export function DeletarAgenda(){
 //const response =  Api.agendaById((i) => i.id == id);
 
 
-   const findByIdAgenda = async () => {
+   const findByIdAgendaAndDelete = async () => {
     const input = document.querySelector('#inputId');//foi esse cara id="inputId"
     console.log(input)
     const id = input.value;
     console.log(id)
-    const response = await Api.getAgendaById(id);
+    const response = await Api.deleteAgenda(id);
     console.log(response)
     setIdi(response);
 
