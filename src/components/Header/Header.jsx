@@ -4,8 +4,9 @@ import {PegarId} from "../PegarId/PegarId.jsx"
 // import {Card} from "../Card/Card.jsx"
 import { AtualizarAgenda } from "../AtualizarAgenda/AtualizarAgenda.jsx";
 import { ActionMode } from "constants/index";
+import {DeletarAgenda} from "../DeletarAgenda/DeletarAgenda.jsx"
 
-export function Header({setCriar,setId, setAtualizando, mode//setLista
+export function Header({setCriar,setId, setAtualizando, mode,setDeletando//setLista
 }){
  
 
@@ -22,6 +23,9 @@ export function Header({setCriar,setId, setAtualizando, mode//setLista
   const badgeCounterAtualizar = (canRander) =>
   Boolean(canRander) && (< AtualizarAgenda disabled={mode !== ActionMode.NORMAL}/>) ;
 
+
+  const badgeCounterDeletar = (canRander) =>
+  Boolean(canRander) && (< DeletarAgenda disabled={mode !== ActionMode.NORMAL}/>) ;
 
   //disabled={mode !== ActionMode.NORMAL}
 
@@ -42,7 +46,7 @@ return (
 
       {badgeCounterAtualizar(setAtualizando)}
 
-
+      {badgeCounterDeletar(setDeletando)}
      {/* {badgeCounterLista(setLista)} */}
 
     </header>
