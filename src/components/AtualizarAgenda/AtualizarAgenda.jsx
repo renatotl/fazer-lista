@@ -28,18 +28,28 @@ export function AtualizarAgenda(){
 //const response =  Api.agendaById((i) => i.id == id);
 
 
-   const updatingAgenda = async () => {
+//    const updatingAgenda = async () => {
+//     const input = document.querySelector('#inputId');//foi esse cara id="inputId"
+//     console.log(input)
+//     const id = input.value;
+//     console.log(id)
+//     const response = await Api.updateAgenda(id);
+//     console.log(response)
+//     setIdi(response);
+
+// }
+
+
+const findByIdAgenda = async () => {
     const input = document.querySelector('#inputId');//foi esse cara id="inputId"
     console.log(input)
     const id = input.value;
     console.log(id)
-    const response = await Api.updateAgenda(id);
+    const response = await Api.getAgendaById(id);
     console.log(response)
     setIdi(response);
 
 }
-
-
 
 
 
