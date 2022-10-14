@@ -12,20 +12,20 @@ export function Header({setCriar,setId, setAtualizando, mode,setDeletando//setLi
 
 
   const badgeCounter = (canRander) =>
-  Boolean(canRander) && (<Criar disabled={mode !== ActionMode.NORMAL}/>);
+  Boolean(canRander) && (<Criar />);
 
 
 
   const badgeCounterId = (canRander) =>
-  Boolean(canRander) &&   (<PegarId disabled={mode !== ActionMode.NORMAL}/>) ;
+  Boolean(canRander) &&   (<PegarId />) ;
 
 // se o mode for diferente de NORMAL ele aciona o disable
   const badgeCounterAtualizar = (canRander) =>
-  Boolean(canRander) && (< AtualizarAgenda disabled={mode !== ActionMode.NORMAL}/>) ;
+  Boolean(canRander) && (< AtualizarAgenda />) ;
 
 
   const badgeCounterDeletar = (canRander) =>
-  Boolean(canRander) && (< DeletarAgenda disabled={mode !== ActionMode.NORMAL}/>) ;
+  Boolean(canRander) && (< DeletarAgenda />) ;
 
   //disabled={mode !== ActionMode.NORMAL}
 

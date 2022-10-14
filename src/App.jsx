@@ -25,6 +25,9 @@ const handleActions = (action) => {
          mode={modoAtual}
          modeAtualizar={() => handleActions(ActionMode.ATUALIZAR)}
          modeDeletar={() => handleActions(ActionMode.DELETAR)}
+         modeCriar={() => handleActions(ActionMode.CRIAR)}
+         modePorId={() => handleActions(ActionMode.PORID)}
+
 
          />
         <Header

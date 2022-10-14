@@ -1,4 +1,4 @@
-const defaultUrl = "https://api-fazer-lista-react.onrender.com/agendas";
+const defaultUrl = "https://api-fazer-lista.herokuapp.com/agendas";
 
 export const Api = {
   createAgenda: async (agenda) => {
