@@ -37,14 +37,17 @@ export const Api = {
   },
 
   updateAgenda: async (id, agenda) => {
+    console.log(id)
+    console.log(agenda)
+    const body = {text: agenda}// foi necessário criar um objeto
     const response = await fetch(`${defaultUrl}/update-agendas/${id}`, {
       method: "PUT",
       headers: new Headers({ "Content-Type": "application/json" }),
-      body: JSON.stringify(agenda),
+      body: JSON.stringify(body),
     });
 
     const agendaUpdated = await response.json();
-
+console.log(agendaUpdated)
     return agendaUpdated;
   },
 
