@@ -3,6 +3,7 @@ import { Header } from "../Header/Header.jsx";
 import { useState } from "react";
 import { ActionMode } from "constants/index";
 import Modal from "components/Modal/Modal";
+import Load from "../../views/Load/Load";
 
 export function NavBar({
   modeAtualizar,
@@ -10,18 +11,21 @@ export function NavBar({
   modeDeletar,
   modePorId,
   modeCriar,
-
+  setTelaAzul,
 }) {
-
+  const [openCaution, setCaution] = useState(false);
+  function handdleCaution() {
+    const set = openModal ? false : true;
+    //alert(set)
+    setCaution(set);
+  }
 
   const [openModal, setOpenModal] = useState(false);
   function handdleMode() {
-    const set = openModal ? false: true
+    const set = openModal ? false : true;
     //alert(set)
     setOpenModal(set);
   }
-
-
 
   function handdleFor() {
     modePorId();
@@ -145,7 +149,7 @@ export function NavBar({
               mode === ActionMode.ATUALIZAR ||
               mode === ActionMode.CRIAR ||
               mode === ActionMode.PORID ||
-              mode === ActionMode.DELETAR 
+              mode === ActionMode.DELETAR
             }
             className="B"
             onClick={handdleMode}
@@ -153,19 +157,37 @@ export function NavBar({
             Não cliaque aqui!
           </button>
         </ul>
-        
+        <ul className="ul">
+          <button
+            disabled={
+              mode === ActionMode.ATUALIZAR ||
+              mode === ActionMode.CRIAR ||
+              mode === ActionMode.PORID ||
+              mode === ActionMode.DELETAR
+            }
+            className="B"
+            onClick={() => {
+              handdleCaution();
+              setTelaAzul(1);
+            }}
+          >
+            Caution!
+          </button>
+        </ul>
+
         {/* <ul className="ul" >
         <button  className="B" type="button" onChange={e => setVerId(e.target.value)} onClick={handleValue3} >Lista de Taferas</button>
         </ul> */}
       </nav>
       {openModal ? <Modal handdleMode={handdleMode} /> : <></>}
+      {openCaution ? <Load handdleMode={handdleCaution} /> : <></>}
+
       <Header
         setCriar={criarIsOpen}
         setId={verId} //setLista={verLista}
         setAtualizando={atualizar}
         setDeletando={deletar}
       />
-    
     </>
   );
 }

@@ -19,12 +19,14 @@ function Modal({ children, closeModal, handdleMode}) {
   return (
     <Overlay overlayClick={() => handdleMode()}>
       <div  onClick={() => handdleMode()}>
+
 <video autoPlay loop controls className="Modal">
   <source src={ha} type="video/mp4" className="Modal"/>
 </video>
        <audio autoPlay src={saw} type="audio/mp3" >
 
        </audio>
+       
       </div>
     </Overlay>
   );

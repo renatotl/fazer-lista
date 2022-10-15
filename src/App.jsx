@@ -1,42 +1,28 @@
-
-import {Header} from "./components/Header/Header.jsx"
-import {NavBar} from "./components/NavBar/NavBar.jsx"
-// import {agendas} from "./components/Mocks/agendas"
-// import {Card} from "./components/Card/Card.jsx"
-import { ActionMode } from "constants/index";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Home} from "./views/Home/Home.jsx";
+import Load from "./views/Load/Load";
+import {TelaAzul} from "./components/TelaAzul/TelaAzul";
 import {useState} from "react"
 
-export function App() {
 
-//o valor inicial é a ActionMode.NORMAL que foi importada
-const [modoAtual, setModoAtual] = useState(ActionMode.NORMAL);
+// retorna <BrowserRouter> como se fosse  o container o Route é cada rota individualmente 
 
-const handleActions = (action) => {
-  // o ActionMode vem por parâmetro e compara se for diferente ele muda o valor
-  const novaAcao = modoAtual === action ? ActionMode.NORMAL : action;
-  setModoAtual(novaAcao);// se ele receber atualizar ele altera o state 
-  // a action mepa o valor do modeAtualizar que recebe ATUALIZAR. Faza comparação do action com o modoAtual se o valor for diferente de normal a minha action vai receber o novo valor que no caso é ATUALIZAR
-};
+// "path" é o caminho e qual é esse caminha é o: "/". Quando ele vai renderizr quando acessar  "/" localhost:3000? ele vai renderizar  o componente <Home />
+function App() {
+
+const [telaAzul,setTelaAzul]= useState(0)
 
 
-    return (
-        <> 
-        <NavBar 
-         mode={modoAtual}
-         modeAtualizar={() => handleActions(ActionMode.ATUALIZAR)}
-         modeDeletar={() => handleActions(ActionMode.DELETAR)}
-         modeCriar={() => handleActions(ActionMode.CRIAR)}
-         modePorId={() => handleActions(ActionMode.PORID)}
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home setTelaAzul={setTelaAzul} />} />
+        <Route path="/load" element={<Load />} />
+        <Route path="/Tela" element={<TelaAzul telaAzul={telaAzul} />} />
 
-
-         />
-        <Header
-        mode={modoAtual}
-        />
-        
-        {/* {setAgendaCompleta.map((props) => (
-           <Card className="myAgenda" key={`myAgenda ${props.id}`} text={props.text} id={props.id} />
-           ))} */}
-        </>
-           )
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
