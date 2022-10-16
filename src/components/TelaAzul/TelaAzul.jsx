@@ -2,6 +2,7 @@ import "./TelaAzul.css"
 import telaazul from "../../assets/telaazul.webp"
 import { useNavigate } from "react-router-dom";
 import {useEffect} from "react"
+import salamisound from "../../assets/salamisound.mp3"
 
 
 
@@ -29,6 +30,7 @@ export function TelaAzul({telaAzul}){
   return(
     <div > 
   <img  className="telaazul"  src={telaazul} alt="telaAzul" />
+  <audio autoPlay src={salamisound} type="audio/mp3" />
 
   </div>
 

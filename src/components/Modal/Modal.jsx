@@ -3,6 +3,7 @@ import Overlay from "components/Overlay/Overlay";
 //import ReactPlayer from 'react-player'
 import ha from "../../assets/video/ha.mp4"
 import saw from "../../assets/saw.mp3"
+import risada from "../../assets/risada.mp3"
 
 //<iframe? tag pra gif
 //>*
@@ -23,9 +24,9 @@ function Modal({ children, closeModal, handdleMode}) {
 <video autoPlay loop controls className="Modal">
   <source src={ha} type="video/mp4" className="Modal"/>
 </video>
-       <audio autoPlay src={saw} type="audio/mp3" >
-
-       </audio>
+       <audio autoPlay  src={saw} type="audio/mp3" />
+     <audio autoPlay src={risada} type="audio/mp3" />
+      
        
       </div>
     </Overlay>
