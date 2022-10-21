@@ -90,7 +90,12 @@ export function NavBar({
               mode === ActionMode.PORID ||
               mode === ActionMode.ATUALIZAR
             }
-            className="B"
+            className={`B ${
+              (mode === ActionMode.PORID ||
+                mode === ActionMode.DELETAR ||
+                mode === ActionMode.ATUALIZAR) &&
+              "Agenda--ativa-D"
+            }`}
             type="button"
             onChange={(e) => setCriarIsOpen(e.target.value)}
             onClick={handdleOne}
@@ -105,7 +110,12 @@ export function NavBar({
               mode === ActionMode.CRIAR ||
               mode === ActionMode.ATUALIZAR
             }
-            className="B"
+            className={`B ${
+              (mode === ActionMode.CRIAR ||
+                mode === ActionMode.DELETAR ||
+                mode === ActionMode.ATUALIZAR) &&
+              "Agenda--ativa-D"
+            }`}
             type="button"
             onChange={(e) => setVerId(e.target.value)}
             onClick={handdleFor}
@@ -120,7 +130,12 @@ export function NavBar({
               mode === ActionMode.CRIAR ||
               mode === ActionMode.PORID
             }
-            className={`B ${mode === ActionMode.ATUALIZAR && "Agenda--ativa"}`}
+            className={`B ${
+              (mode === ActionMode.ATUALIZAR && "Agenda--ativa") ||
+              (mode === ActionMode.DELETAR && "Agenda--ativa-D") ||
+              (mode === ActionMode.PORID && "Agenda--ativa-D") ||
+              (mode === ActionMode.CRIAR && "Agenda--ativa-D")
+            }`}
             type="button"
             onChange={(e) => setAtualizar(e.target.value)}
             onClick={handdleTwo}
@@ -135,7 +150,12 @@ export function NavBar({
               mode === ActionMode.CRIAR ||
               mode === ActionMode.PORID
             }
-            className={`B ${mode === ActionMode.DELETAR && "Agenda--ativa-D"}`}
+            className={`B ${
+              (mode === ActionMode.DELETAR && "Agenda--ativa-V") ||
+              (mode === ActionMode.ATUALIZAR && "Agenda--ativa-D") ||
+              (mode === ActionMode.PORID && "Agenda--ativa-D") ||
+              (mode === ActionMode.CRIAR && "Agenda--ativa-D")
+            }`}
             type="button"
             onChange={(e) => setAtualizar(e.target.value)}
             onClick={handdleThree}
@@ -151,7 +171,13 @@ export function NavBar({
               mode === ActionMode.PORID ||
               mode === ActionMode.DELETAR
             }
-            className="B"
+            className={`B ${
+              (mode === ActionMode.CRIAR ||
+                mode === ActionMode.PORID ||
+                mode === ActionMode.DELETAR ||
+                mode === ActionMode.ATUALIZAR) &&
+              "Agenda--ativa-D"
+            }`}
             onClick={handdleMode}
           >
             Não cliaque aqui!
@@ -165,7 +191,13 @@ export function NavBar({
               mode === ActionMode.PORID ||
               mode === ActionMode.DELETAR
             }
-            className="B"
+            className={`B ${
+              (mode === ActionMode.CRIAR ||
+                mode === ActionMode.PORID ||
+                mode === ActionMode.DELETAR ||
+                mode === ActionMode.ATUALIZAR) &&
+              "Agenda--ativa-D"
+            }`}
             onClick={() => {
               handdleCaution();
               setTelaAzul(1);

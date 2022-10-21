@@ -7,7 +7,7 @@ import risada from "../../assets/risada.mp3"
 
 //<iframe? tag pra gif
 //>*
-
+//src\components\Modal\Modal.jsx
 
 // o closeModa no Overlay é overlayClick
 function Modal({ children, closeModal, handdleMode}) {
