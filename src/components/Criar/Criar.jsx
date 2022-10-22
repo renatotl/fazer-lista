@@ -75,7 +75,7 @@ export function Criar(){
 
    //função de savar agenda
    const handleCreate = async () => { 
-    if(agenda !== undefined){ 
+    if(agenda !== undefined){ // o primeiro click no body mandava undefined só o segundo que vinha valor
     await Api.createAgenda(agenda);
     console.log(agenda)
     }

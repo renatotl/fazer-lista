@@ -1,7 +1,7 @@
 import "./DeletarAgenda"
 import React, {useState} from "react"
 // import {agendas} from "../Mocks/agendas.js"
-import {CardId} from "../CardId/CardId.jsx"
+import {CardDelete} from "../CardDelete/CardDelete.jsx"
 import {Api} from "../Utils/Api.js"
 
 
@@ -9,8 +9,11 @@ import {Api} from "../Utils/Api.js"
 export function DeletarAgenda(){
 
  
-
+// message do back
     const [idi, setIdi] = useState([]);
+// useState separado só pro id
+    const [ID, setID] = useState([]);
+
 
 
     function twoHandle(){ 
@@ -33,6 +36,9 @@ export function DeletarAgenda(){
     console.log(input)
     const id = input.value;
     console.log(id)
+    setID(id);
+    console.log(id)
+
     const response = await Api.deleteAgenda(id);
     console.log(response)
     setIdi(response);
@@ -47,7 +53,7 @@ export function DeletarAgenda(){
           <input className="IDD"  id="inputId" name="inputId" type="text" placeholder="Deletar por id:" onChange={(event) => setIdi(event.target.value)}></input>
            <button type="button" onClick={twoHandle}>Deletar</button>
            {
-            <CardId text={idi.text} id={idi.id} />}
+            <CardDelete test={idi.message} id={ID} />}
         </div>    
             
     )

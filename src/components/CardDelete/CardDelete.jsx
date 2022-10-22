@@ -1,11 +1,11 @@
-import "./CardId.css"
+import "./CardDelete.css"
 
-export function CardId(props){
+export function CardDelete(props){
     console.log(props)
     return (
         < div className="mainCard"> 
         <div className="card">
-            <strong>{props.text}</strong>
+            <strong>{props.test}</strong>
         </div>
         <div className="card2">
         <strong>{props.id}</strong>
