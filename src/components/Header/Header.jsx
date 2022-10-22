@@ -38,7 +38,7 @@ export function Header({setCriar,setId, setAtualizando, mode,setDeletando//setLi
 return (
  
     <header className="header">
-      {badgeAction(mode !== ActionMode.NORMAL)}
+      {badgeAction(mode === ActionMode.ATUALIZAR || mode === ActionMode.DELETAR)}
 
       {badgeCounter(setCriar)}
 
