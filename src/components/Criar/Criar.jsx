@@ -10,7 +10,7 @@ import {Api} from "../Utils/Api.js"
 export function Criar(){
 
   // useSte do texto
-  const [agendaTask, setAgendaTask] = useState();
+  const [agendaTask, setAgendaTask] = useState("");
 
 // useState do id
   const [novoId, setIdTask] = useState("");
@@ -22,19 +22,8 @@ export function Criar(){
    const  [agendaLista, setAllAgendas] = useState([]);
 
 
-  
-  // função que foi executada no button
-  function twoHandle(){ 
-    //função que monta o texto com id
-    handleAddAgenda()
-    // função que salva na Api
-    handleCreate()
-    //função do getLista
-    // getAgendas()
-  }
 
-
-
+   
     //função que monta o texto com id
   function handleAddAgenda() {
     const novaAgenda = {
@@ -46,6 +35,8 @@ export function Criar(){
     setAgenda(novaAgenda);
 
   }
+
+
 //O useEffect controla o ciclo de vida dos components 
   useEffect(() => {
     getAgendas();
@@ -57,12 +48,6 @@ export function Criar(){
     setAllAgendas(agendas);
   }
   
-  //função de savar agenda
-  const handleCreate = async () => { 
-    await Api.createAgenda(agenda);
-    console.log(agenda)
-  };
-
 
   /*
   // quando o componente for renderizado na tela o useEffect vai renderizar nosso getLista
@@ -72,6 +57,29 @@ export function Criar(){
 */
   // * Usando o hook useEffect informamos ao React que o componente precisa executar algo apenas após sua renderização. O React irá se encarregar de chamar a função passada a ele depois de realizar as atualizações do DOM
 
+
+
+   // função que foi executada no button
+  function twoHandle(){ 
+    //função que monta o texto com id
+    handleAddAgenda()
+    // função que salva na Api
+
+    handleCreate()
+
+    //função do getLista
+    // getAgendas()
+  }
+ 
+
+
+   //função de savar agenda
+   const handleCreate = async () => { 
+    if(agenda !== undefined){ 
+    await Api.createAgenda(agenda);
+    console.log(agenda)
+    }
+  };
 
     return (
       

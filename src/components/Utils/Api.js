@@ -2,6 +2,11 @@ const defaultUrl = "https://api-fazer-lista.herokuapp.com/agendas";
 
 export const Api = {
   createAgenda: async (agenda) => {
+    console.log(agenda)
+    // const body = {
+    //   id: agenda,
+    //   text:agenda
+    // }
     const response = await fetch(`${defaultUrl}/create-agenda`, {
       method: "POST",
       headers: new Headers({ "Content-Type": "application/json" }),
