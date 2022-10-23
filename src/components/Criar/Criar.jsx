@@ -40,7 +40,7 @@ export function Criar(){
 //O useEffect controla o ciclo de vida dos components 
   useEffect(() => {
     getAgendas();
-  },[]);
+  },[agendaLista]);//pasamos o useState do getAll aqui assim toda vez que eu add uma nova tarefa aparecerá automaticamente no lista sem precisar recarregar a página ou fechar e abrir novamente o componente.
 
   async function getAgendas() {
     const agendas = await Api.getAllAgendas();
